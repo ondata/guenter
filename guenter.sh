@@ -65,4 +65,8 @@ if (${COMUNE_1} == "PUEGNAGO DEL GARDA") {
 }
 ' then sort -f REGIONE,"Codice Comune formato alfanumerico",COMUNE_1 "$folder"/dati/steleElettorale.csv
 
+# sposta nella cartella principale
 mv "$folder"/dati/steleElettorale.csv "$folder"/steleElettorale.csv
+
+# rinomina i campi
+sed -i -r 's/^Codice Comune for.+/codiceComuneISTAT,nomeRegione,nomeComune/g' "$folder"/steleElettorale.csv
