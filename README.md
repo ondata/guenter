@@ -1,3 +1,9 @@
+- [Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno](#creare-in-pochi-minuti-una-mappa-elettorale-a-partire-dai-dati-del-ministero-dellinterno)
+  - [I dati](#i-dati)
+  - [Problemi](#problemi)
+  - [Note](#note)
+- [Lo script](#lo-script)
+
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
 Qualche giorno fa mi ha scritto Guenter Richter - anzi lo scrivo bene **Güenter** Richter, perché gli accenti contano - per chiedermi se quest'anno onData avesse fatto qualcosa con i dati elettorali delle elezioni europee del 26 maggio 2019.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e noralizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); ma questa volta purtroppo non abbiamo lavorato su questi dati.
@@ -84,13 +90,31 @@ Allora ho estratto i soli nomi in italiano delle regioni e rifatto il tutto: per
 
 ## Problemi
 
-| Nome Ministero Interni | Nome ISTAT |
-| --- | --- |
-| PUEGNAGO DEL GARDA | PUEGNAGO SUL GARDA |
-| SAN DORLIGO DELLA VALLE-DOLINA | SAN DORLIGO DELLA VALLE |
-| ACQUARICA DEL CAPO | PRESICCE-ACQUARICA |
-| PRESICCE | PRESICCE-ACQUARICA |
+| Nome Ministero Interni | Nome ISTAT | Note
+| --- | --- | --- |
+| PUEGNAGO DEL GARDA | PUEGNAGO SUL GARDA | Sono chiamati diversamente |
+| SAN DORLIGO DELLA VALLE-DOLINA | SAN DORLIGO DELLA VALLE | Sono chiamati diversamente |
+| ACQUARICA DEL CAPO | PRESICCE-ACQUARICA | È stato unito al Comune di Presicce e rinominato |
+| PRESICCE | PRESICCE-ACQUARICA | È stato unito al Comune di Acquarica del Capo e rinominato |
 
 ## Note
 
 In ISTAT `Borgocarbonara  ` con due spazi
+
+# Lo script
+
+**Güenter** mi aveva anche detto che, prima di fare la sua mappa, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "voi come fate?"
+
+Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni usati dal Ministero degli Interni**, un flusso di lavoro potrebbe essere questo:
+
+- scaricare i due dataset (dati elettorali e dati ISTAT con i codici di ogni Comune);
+- verifcare di entrambi l'*encoding* e riportali verso uno comune e più "standard" (come l'UTF-8);
+- verifcare di entrambi il *separatore di campo*, sceglierne uno comune e per comodità usare quello di *default* per la gran parte delle applicazioni, ovvero la `,`;
+- estrarre i valori univoci di "Nome Comune in italiano", "Regione", per i dati elettorali, per creare il file anagrafico di base di questa risorsa;
+- estrarre i valori di "Nome Comune in italiano, "Codice Comunale ISTAT", "Nome Regione in italiano", per i dati ISTAT, per creare il file anagrafico di base di questa risorsa;
+- fare il *JOIN* per nome di Comune e Regione tra le due anagrafiche create, in modo da associare ai nomi dei Comuni dei dati elettorali il codice ISTAT
+  - senza tenere conto del *case* dei caratteri (maiuscolo, minuscolo);
+  - senza tenere conto di spazi errati (doppi spazi da riportare a uno e spazi a inizio/fine cella da rimuovere);
+  - senza tenere conto dei caratteri non alfanumerici (come `-`, `~`, `.`, ecc.);
+  - senza tenere conto dei caratteri accentati e riportali secondo l'alfabeto latino;
+- correggere in modo specifico i nomi dei Comuni di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
