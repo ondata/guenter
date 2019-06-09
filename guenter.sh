@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 set -x
 
@@ -32,11 +32,11 @@ mlr --csv --ifs ";" cut -f REGIONE,COMUNE then uniq -a "$folder"/dati/europee201
 mlr --csv --ifs ";" then cut -f "Codice Comune formato alfanumerico","Denominazione in italiano","Denominazione regione" "$folder"/dati/tmp_ISTAT.csv >"$folder"/dati/raw_ISTAT.csv
 # csvmatch -i "$folder"/dati/raw_ISTAT.csv "$folder"/dati/raw_anagraficaElezioni.csv --fields1 "Denominazione regione" "Denominazione in italiano" --fields2 "REGIONE" "COMUNE" --output 1."Codice Comune formato alfanumerico" 2.REGIONE 2.COMUNE --join right-outer >"$folder"/dati/steleElettoralePartenza.csv
 
-# modifica il separatore del CSV dei dati elettorali da ";" a "," e rimuovi gli spazi bianchi in più
-mlr -I --csv --ifs ";" clean-whitespace "$folder"/dati/europee2019_scrutini_area_italia_utf8.csv
+# modifica il separatore del CSV dei dati elettorali da ";" a "," e rimuovi eventuali spazi bianchi in più
+mlr -I --csv --ifs ";" cat "$folder"/dati/europee2019_scrutini_area_italia_utf8.csv
 
-# modifica il separatore del CSV dei dati ISTAT da ";" a ",", rimuovi gli spazi bianchi in più, ed estrai soltanto alcune colonne
-mlr --csv --ifs ";" clean-whitespace then cut -f "Codice Comune formato alfanumerico","Denominazione in italiano","Denominazione regione" "$folder"/dati/tmp_ISTAT.csv >"$folder"/dati/ISTAT.csv
+# modifica il separatore del CSV dei dati ISTAT da ";" a ",", rimuovi eventuali spazi bianchi in più, ed estrai soltanto alcune colonne
+mlr --csv --ifs ";" cut -f "Codice Comune formato alfanumerico","Denominazione in italiano","Denominazione regione" "$folder"/dati/tmp_ISTAT.csv >"$folder"/dati/ISTAT.csv
 
 # nei dati ISTAT suddividi in più colonne i nomi di regione in più lingue
 mlr --csv nest --explode --values --across-fields -f "Denominazione regione" --nested-fs "/" then unsparsify "$folder"/dati/ISTAT.csv >"$folder"/dati/anagraficaISTAT.csv
@@ -49,7 +49,7 @@ mlr --csv cut -f REGIONE,COMUNE then uniq -a "$folder"/dati/europee2019_scrutini
 # nei dati elettorali suddividi in più colonne i nomi di comune in più lingue
 mlr -I --csv nest --explode --values --across-fields -f COMUNE --nested-fs "/" then unsparsify "$folder"/dati/anagraficaElezioni.csv
 
-csvmatch -i -a -n "$folder"/dati/anagraficaISTAT.csv "$folder"/dati/anagraficaElezioni.csv --fields1 "Denominazione regione_1" "Denominazione in italiano" --fields2 "REGIONE" "COMUNE_1" --output 1."Codice Comune formato alfanumerico" 2.REGIONE 2.COMUNE_1 --join right-outer >"$folder"/dati/steleElettorale.csv
+csvmatch -i -a -n -l "$folder"/risorse/rule.txt "$folder"/dati/anagraficaISTAT.csv "$folder"/dati/anagraficaElezioni.csv --fields1 "Denominazione regione_1" "Denominazione in italiano" --fields2 "REGIONE" "COMUNE_1" --output 1."Codice Comune formato alfanumerico" 2.REGIONE 2.COMUNE_1 --join right-outer >"$folder"/dati/steleElettorale.csv
 
 # rimuovi righe vuote
 sed -i '/^$/d' "$folder"/dati/steleElettorale.csv
@@ -62,23 +62,7 @@ if (${COMUNE_1} == "PUEGNAGO DEL GARDA") {
   ${Codice Comune formato alfanumerico} = "032004"
 } elif (${COMUNE_1} == "ACQUARICA DEL CAPO" || ${COMUNE_1} == "PRESICCE") {
   ${Codice Comune formato alfanumerico} = "075098"
-} elif (${COMUNE_1} == "GABBIONETA BINANUOVA") {
-  ${Codice Comune formato alfanumerico} = "019045"
-} elif (${COMUNE_1} == "GADESCO PIEVE DELMONA") {
-  ${Codice Comune formato alfanumerico} = "019046"
-} elif (${COMUNE_1} == "BRIGNANO FRASCATA") {
-  ${Codice Comune formato alfanumerico} = "006024"
-} elif (${COMUNE_1} == "MONTESCUDO - MONTE COLOMBO") {
-  ${Codice Comune formato alfanumerico} = "099029"
-} elif (${COMUNE_1} == "RASUN ANTERSELVA") {
-  ${Codice Comune formato alfanumerico} = "021071"
-} elif (${COMUNE_1} == "GIARDINI NAXOS") {
-  ${Codice Comune formato alfanumerico} = "083032"
-} elif (${COMUNE_1} == "CALATAFIMI SEGESTA") {
-  ${Codice Comune formato alfanumerico} = "081003"
 }
 ' then sort -f REGIONE,"Codice Comune formato alfanumerico",COMUNE_1 "$folder"/dati/steleElettorale.csv
 
 mv "$folder"/dati/steleElettorale.csv "$folder"/steleElettorale.csv
-
-

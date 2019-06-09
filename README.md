@@ -55,7 +55,7 @@ Avere il codice ISTAT sarebbe stata la cosa più comoda, ma mi sono detto "Andre
 
 ---
 
-⚠️ Di *encoding* e separatore non c'è traccia sul sito di ISTAT.
+⚠️ Di *encoding* e separatore non c'è traccia nemmeno sul sito di ISTAT.
 
 ---
 
@@ -81,3 +81,16 @@ Allora ho guardato un po' l'*output* e ho visto che ad esempio tutti comuni del 
 ---
 
 Allora ho estratto i soli nomi in italiano delle regioni e rifatto il tutto: per diversi comuni non riescivo a fare la correlazione per nome.
+
+## Problemi
+
+| Nome Ministero Interni | Nome ISTAT |
+| --- | --- |
+| PUEGNAGO DEL GARDA | PUEGNAGO SUL GARDA |
+| SAN DORLIGO DELLA VALLE-DOLINA | SAN DORLIGO DELLA VALLE |
+| ACQUARICA DEL CAPO | PRESICCE-ACQUARICA |
+| PRESICCE | PRESICCE-ACQUARICA |
+
+## Note
+
+In ISTAT `Borgocarbonara  ` con due spazi
