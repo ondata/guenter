@@ -25,7 +25,7 @@ Il primo passo è stato quello di scaricare il file ["Europee 2019. Scrutini Are
 
 ---
 
-Il separatore si legge guardando le prime righe del file (`I : ITALIA NORD-OCCIDENTALE;LIGURIA;GENOVA;ARENZANO;PARTITO DEMOCRATICO;1904`) e qui è il carattere `;`. <br>Per l'*encoding* ho usato uno dei *tool* con cui si ricava via *inferencing* ([chardet](https://github.com/chardet/chardet)); ho avuto una brutta sorpresa (la prima volta che mi succede), perché lo strumento non è stato in grado di estrarlo. E anche con altri strumenti non riesco a risolvere, perché ho sempre caratteri illegibili, come sotto (avviene ad esempio per tutti i nomi in tedesco del Trentino-Alto Adige, che contengono una dieresi).
+Il separatore si legge guardando le prime righe del file (`I : ITALIA NORD-OCCIDENTALE;LIGURIA;GENOVA;ARENZANO;PARTITO DEMOCRATICO;1904`) e qui è il carattere `;`. <br>Per l'*encoding* ho usato uno dei *tool* con cui si ricava via *inferencing* ([chardet](https://github.com/chardet/chardet)); ho avuto una brutta sorpresa (la prima volta che mi succede), perché lo strumento non è stato in grado di estrarlo. E anche con altri strumenti non riuscivo a risolvere, perché avevo sempre alcuni caratteri illegibili, come sotto (avviene ad esempio per tutti i nomi in tedesco del Trentino-Alto Adige, che contengono una dieresi).
 
     ITALIA NORD-ORIENTALE;TRENTINO-ALTO ADIGE;BOLZANO;LUSON/LۓEN;SVP;506
 
@@ -92,7 +92,7 @@ Allora ho estratto i soli nomi in italiano delle regioni e rifatto il tutto. E d
 
 Mi rimanevono fuori ad esempio: AGLIE', ALA' DEI SARDI, ALI', ALI' TERME, ALME', ANTEY-SAINT-ANDRE', ARQUA' PETRARCA, ARQUA' POLESINE, ARSIE', BARZANO', BASCAPE', BASELGA DI PINE', BASICO', BASTIA MONDOVI', BELVI', BIANZE', BIDONI', BUDDUSO', CAGNO', CANICATTI', CANTU', ..."
 
-Il problema sono i **caratteri accentati**.
+Il problema sembra legato ai **caratteri accentati**.
 
 ---
 
