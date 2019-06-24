@@ -4,6 +4,7 @@
 - [Creare una procedura](#Creare-una-procedura)
 - [CSV Match](#CSV-Match)
 - [Il lavoro di Güenter](#Il-lavoro-di-G%C3%BCenter)
+- [Conclusioni](#Conclusioni)
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
@@ -185,6 +186,30 @@ La parte più importante è la prima `csvmatch -i -a -n -l "$folder"/risorse/rul
 
 Tutto il resto è comprensibile nei commenti e nella documentazione: è il *JOIN* tra l'[anagrafica dei comuni di ISTAT](./dati/anagraficaISTAT.csv) e [quella del Ministero degli Interni](./dati/anagraficaElezioni.csv)), al fine di produre la "[Stele Elettorale"](./steleElettorale.csv), con il codice comunale ISTAT, per ogni etichetta di Comune del Ministero.
 
+Da questo confronto rimangono fuori soltanto "PUEGNAGO SUL GARDA", "SAN DORLIGO DELLA VALLE", ACQUARICA DEL CAPO e "PRESICCE", per le ragioni scritte sopra.
+
 # Il lavoro di Güenter
 
-....
+Güenter ha fatto con i dati elettorali un lavoro bellissimo di cui qua sotto vedete un antemprima e che lui ha commentato così:
+
+> Valutazione del risultato dei partiti per comune  rispetto alla media nazionale dei partiti. Il comune viene colorato con il partiti che ha il risultato che supera di più la media nazionale, misurato in deviazioni standard. Le frecce mostrano direttamente questo risultato differenziale, ma solo risultati sopra zero, vuol dire, dove il partito e particolarmente forte. L'ultima mappa modifica la grandezza di queste frecce con il numero totale di votanti per comune.
+
+![](./imgs/guenterPreview.png)
+
+Per il momento è possibile ammirarne una versione statica in queste quattro gallerie:
+
+- <https://photos.google.com/share/AF1QipMkRklwcgdaJ1QWpQw0VKl2BMCXguXh4vdDLpxSZBJihuBqGBjFD7uWYSwQYdHw5w?key=cXh3WldYMHpGWVFlWU04dzd6cjNNbmVfRHR1dHhn>;
+- <https://photos.google.com/share/AF1QipMM5u_fJETHttewY1A9SuYth10X7NcgYYJlSJiVuLQSEfjpjp5fUHflz82GGeWusA?key=dXpnOXIzSXo5LTJQVVVVX2x6cDhhWG5UUG8wX1Jn>;
+- <https://photos.google.com/share/AF1QipPnL96WL43cHB7okj_W6Daq9aiadLbRuJgxP8QlYoZfjj-BzjjL0ESfyeKWRyAirA?key=b2dCeVBkWm5ncWNwcE5LRU1EU1cwTERyejZyX3ZR>;
+- <https://photos.google.com/share/AF1QipOf7CClSZywQye2ON15M55OGW3jSthMqutbIU5uXtGc_voU7As8ySoj4RHE4Z2W3A?key=QzgwR01sbVNaYXBqM2hJVUZob0ljTzY4NmQwR1B3>
+
+Nei prossimi giorni uscirà la versione interattiva e ve ne daremo notizia.
+
+
+# Conclusioni
+
+Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi dati, sia potenzialmente ridotto per piccole lacune e/o omissioni. Non c'è alcuna voglia di alzare il ditino, ma soltanto mostrare come un utente, un professionista, un'azienda, uno studente, un cittadino, ecc. non possa lavorare da subito agli obiettivi che ha, ma debba prima **"fare funzionare" il dato**.<br>
+Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore
+
+Io la mappa putroppo non l'ho fatta più, **ci voleva troppo tempo**. Inoltre quelle di Güenter sono le più belle e con più significato tra quelle viste in queste settimane; non sarei in grado di fare di meglio.<br>
+Per noi di onData è un piacere speciale che un utente come lui si confronti con noi per discutere di questioni come queste. A lui un grazie per avere stimolato questo approfondimento.
