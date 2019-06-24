@@ -153,12 +153,37 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
 
-Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la parte "importante", quella della comparazione tra le due anagrafiche di nomi Comuni, è stata fatta con il comodissimo [**csvmatch**](https://github.com/maxharlow/csvmatch).
+Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la parte "importante", quella della comparazione tra le due anagrafiche di nomi Comuni, è stata fatta con il comodissimo [**CSV Match**](https://github.com/maxharlow/csvmatch).
 
 # csvmatch
 
-...
+**CSV Match** è un'*utility* python per fare *matching* tra CSV, ovvero quello di cui si parla sopra.<br>Per approfondire consiglio [questa ottima presentazione](https://docs.google.com/presentation/d/1oRSrVuRhff9UDO4-zfKsk9VnhnSGeaS1FNguA-SUXR8/edit#slide=id.g52423af19d_0_53) di Max Harlow (il suo autore), preparata per la conferenza NICAR 2019 (le cui slide sono ogni hanno fonte di perle).
 
+Qui qualche nota su come è stata utilizzata in questa occasione. Il comando lanciato è:
+
+```bash
+# comando di base con parametri
+csvmatch -i -a -n -l "$folder"/risorse/rule.txt \
+# CSV da comparare
+"$folder"/dati/anagraficaISTAT.csv "$folder"/dati/anagraficaElezioni.csv \
+# campi utilizzati per il JOIN nel primo file CSV
+--fields1 "Denominazione regione_1" "Denominazione in italiano" \
+# campi utilizzati per il JOIN nel secondo file CSV
+--fields2 "REGIONE" "COMUNE_1" \
+# campi dei due CSV scelti come output
+--output 1."Codice Comune formato alfanumerico" 2.REGIONE 2.COMUNE_1 \
+# tipo di JOIN da applicare
+--join right-outer >"$folder"/dati/steleElettorale.csv
+```
+
+La parte più importante è la prima `csvmatch -i -a -n -l "$folder"/risorse/rule.txt`, perché ci fa superare la gran parte dei problemi:
+
+- `-i`, per fare comparazioni che non tengano conto del *case* (maiscolo, minuscolo);
+- `-a`, per ignorare nella comparazione tutti i caratteri non alfanumerici;
+- `-n`, per convertire in caratteri "latini" tutti i caratteri, prima di compararli;
+- `-l`, per applicare delle espressioni regolari (scritte nel file [`rule.txt`](./risorse/rule.txt)), per ignorare ad esempio *white space* a inizio e fine cella.
+
+Tutto il resto è comprensibile nei commenti e nella documentazione: è il *JOIN* tra l'[anagrafica dei comuni di ISTAT](./dati/anagraficaISTAT.csv) e [quella del Ministero degli Interni](./dati/anagraficaElezioni.csv)), al fine di produre la "[Stele Elettorale"](./steleElettorale.csv), con il codice comunale ISTAT, per ogni etichetta di Comune del Ministero.
 
 # Il lavoro di Güenter
 
