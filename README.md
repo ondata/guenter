@@ -188,6 +188,8 @@ Tutto il resto è comprensibile nei commenti e nella documentazione: è il *JOIN
 
 Da questo confronto rimangono fuori soltanto "PUEGNAGO SUL GARDA", "SAN DORLIGO DELLA VALLE", ACQUARICA DEL CAPO e "PRESICCE", per le ragioni scritte sopra.
 
+Dimenticavo: CSV Match fa anche confronti *fuzzy*!
+
 # Il lavoro di Günter
 
 Günter ha fatto con i dati elettorali un lavoro bellissimo. Qui sotto un'antemprima, che lui ha commentato così:
