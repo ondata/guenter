@@ -1,6 +1,7 @@
 - [Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno](#Creare-in-pochi-minuti-una-mappa-elettorale-a-partire-dai-dati-del-ministero-dellInterno)
   - [I dati](#I-dati)
 - [Mettere tutto questo insieme in una procedura](#Mettere-tutto-questo-insieme-in-una-procedura)
+- [Il lavoro di Güenter](#Il-lavoro-di-G%C3%BCenter)
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
@@ -126,4 +127,9 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
 
-Tutto questo è stato trasformato in questo script bash
+Tutto questo è stato trasformato in questo script bash ....
+
+
+# Il lavoro di Güenter
+
+....
