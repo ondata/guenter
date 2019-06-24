@@ -135,7 +135,7 @@ E comparando gli esiti di una modalità più "tradizionale", con una *fuzzy*, qu
 
 # Creare una procedura
 
-**Güenter** mi aveva anche detto che, prima di fare le sue mappe, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera fonte ispiratrici di questo post -  è quella di sotto.
+**Güenter** mi aveva anche detto che, prima di fare le sue mappe, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera **fonte ispiratrice** di questo post -  è quella di sotto.
 
 ![](./imgs/voiComeFate.png)
 
@@ -153,7 +153,7 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
 
-Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la partte
+Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la parte "importante", quella della comparazione tra le due anagrafiche di nomi Comuni, è stata fatta con il comodissimo [**csvmatch**](https://github.com/maxharlow/csvmatch).
 
 # csvmatch
 
