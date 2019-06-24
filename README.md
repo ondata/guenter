@@ -3,14 +3,14 @@
 - [Fuzzy sti c...y (con zeta dolce)](#Fuzzy-sti-cy-con-zeta-dolce)
 - [Creare una procedura](#Creare-una-procedura)
 - [CSV Match](#CSV-Match)
-- [Il lavoro di Güenter](#Il-lavoro-di-G%C3%BCenter)
+- [Il lavoro di Günter](#Il-lavoro-di-G%C3%BCnter)
 - [Conclusioni](#Conclusioni)
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
-Qualche giorno fa mi ha scritto Guenter Richter - anzi lo scrivo bene **Güenter** Richter, perché **gli accenti sono importanti** - per chiedermi se quest'anno onData avesse fatto qualcosa con i **dati elettorali** delle elezioni **europee** del 26 maggio **2019**.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e normalizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); questa volta purtroppo non abbiamo lavorato su questi dati.
+Qualche giorno fa mi ha scritto Gunter Richter - anzi lo scrivo bene **Günter** Richter, perché **gli accenti sono importanti** - per chiedermi se quest'anno onData avesse fatto qualcosa con i **dati elettorali** delle elezioni **europee** del 26 maggio **2019**.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e normalizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); questa volta purtroppo non abbiamo lavorato su questi dati.
 
-Nella vita precedente facevo più mappe e visto che stavolta non era necessario fare lo *scraping* ([i dati aperti sono pubblicati](https://twitter.com/Viminale/status/1135550843841916928)) e che Güenter mi aveva raccontato di avere fatto delle belle mappe, ho deciso di farla anche io una "mappetta".<br>Uso questo termine perché volevo fare **una cosa carina** di base (il partito più votato per ogni comune), in **pochi minuti**.
+Nella vita precedente facevo più mappe e visto che stavolta non era necessario fare lo *scraping* ([i dati aperti sono pubblicati](https://twitter.com/Viminale/status/1135550843841916928)) e che Günter mi aveva raccontato di avere fatto delle belle mappe, ho deciso di farla anche io una "mappetta".<br>Uso questo termine perché volevo fare **una cosa carina** di base (il partito più votato per ogni comune), in **pochi minuti**.
 
 E confermo che **per fare la mappa, ci vuole poco tempo**. A seguire le modalità per farlo.
 
@@ -29,7 +29,7 @@ Il separatore si legge guardando le prime righe del file (`I : ITALIA NORD-OCCID
 
     ITALIA NORD-ORIENTALE;TRENTINO-ALTO ADIGE;BOLZANO;LUSON/LۓEN;SVP;506
 
-Allora ho fatto una cosa molto grezza e "a mano": ho aperto il CSV con LibreOffice Calc, e provato uno ad uno i set di caratteri, finché in anteprima mi è comparsa la `Ü` di LÜSEN (e anche di Güenter). Perché **gli accenti sono importanti**.
+Allora ho fatto una cosa molto grezza e "a mano": ho aperto il CSV con LibreOffice Calc, e provato uno ad uno i set di caratteri, finché in anteprima mi è comparsa la `Ü` di LÜSEN (e anche di Günter). Perché **gli accenti sono importanti**.
 
 ![](https://i.imgur.com/S8YMhfv.png)
 
@@ -136,7 +136,7 @@ E comparando gli esiti di una modalità più "tradizionale", con una *fuzzy*, qu
 
 # Creare una procedura
 
-**Güenter** mi aveva anche detto che, prima di fare le sue mappe, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera **fonte ispiratrice** di questo post -  è quella di sotto.
+**Günter** mi aveva anche detto che, prima di fare le sue mappe, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera **fonte ispiratrice** di questo post -  è quella di sotto.
 
 ![](./imgs/voiComeFate.png)
 
@@ -188,9 +188,9 @@ Tutto il resto è comprensibile nei commenti e nella documentazione: è il *JOIN
 
 Da questo confronto rimangono fuori soltanto "PUEGNAGO SUL GARDA", "SAN DORLIGO DELLA VALLE", ACQUARICA DEL CAPO e "PRESICCE", per le ragioni scritte sopra.
 
-# Il lavoro di Güenter
+# Il lavoro di Günter
 
-Güenter ha fatto con i dati elettorali un lavoro bellissimo. Qui sotto un'antemprima, che lui ha commentato così:
+Günter ha fatto con i dati elettorali un lavoro bellissimo. Qui sotto un'antemprima, che lui ha commentato così:
 
 > Valutazione del risultato dei partiti per comune  rispetto alla media nazionale dei partiti. Il comune viene colorato con il partiti che ha il risultato che supera di più la media nazionale, misurato in deviazioni standard. Le frecce mostrano direttamente questo risultato differenziale, ma solo risultati sopra zero, vuol dire, dove il partito e particolarmente forte. L'ultima mappa modifica la grandezza di queste frecce con il numero totale di votanti per comune.
 
@@ -211,5 +211,5 @@ Nei prossimi giorni uscirà la **versione interattiva** e ve ne daremo notizia.
 Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi dati, sia potenzialmente ridotto per piccole lacune e/o omissioni. Non c'è alcuna voglia di alzare il ditino, ma soltanto mostrare come un utente, un professionista, un'azienda, uno studente, un cittadino, ecc. non possa lavorare da subito agli obiettivi che ha, ma debba prima **"fare funzionare" il dato**.<br>
 Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore
 
-Io la mappa putroppo non l'ho fatta più, **ci voleva troppo tempo**. Inoltre quelle di Güenter sono le più belle e con più significato tra quelle viste in queste settimane; non sarei in grado di fare di meglio.<br>
+Io la mappa putroppo non l'ho fatta più, **ci voleva troppo tempo**. Inoltre quelle di Günter sono le più belle e con più significato tra quelle viste in queste settimane; non sarei in grado di fare di meglio.<br>
 Per noi di onData è un piacere speciale che un utente come lui si confronti con noi per discutere di questioni come queste: lo ringraziamo per avere stimolato questo approfondimento.
