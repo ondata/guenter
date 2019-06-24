@@ -190,7 +190,7 @@ Da questo confronto rimangono fuori soltanto "PUEGNAGO SUL GARDA", "SAN DORLIGO 
 
 # Il lavoro di Güenter
 
-Güenter ha fatto con i dati elettorali un lavoro bellissimo di cui qua sotto vedete un antemprima e che lui ha commentato così:
+Güenter ha fatto con i dati elettorali un lavoro bellissimo. Qui sotto un'antemprima, che lui ha commentato così:
 
 > Valutazione del risultato dei partiti per comune  rispetto alla media nazionale dei partiti. Il comune viene colorato con il partiti che ha il risultato che supera di più la media nazionale, misurato in deviazioni standard. Le frecce mostrano direttamente questo risultato differenziale, ma solo risultati sopra zero, vuol dire, dove il partito e particolarmente forte. L'ultima mappa modifica la grandezza di queste frecce con il numero totale di votanti per comune.
 
@@ -203,7 +203,7 @@ Per il momento è possibile ammirarne una versione statica in queste quattro gal
 - <https://photos.google.com/share/AF1QipPnL96WL43cHB7okj_W6Daq9aiadLbRuJgxP8QlYoZfjj-BzjjL0ESfyeKWRyAirA?key=b2dCeVBkWm5ncWNwcE5LRU1EU1cwTERyejZyX3ZR>;
 - <https://photos.google.com/share/AF1QipOf7CClSZywQye2ON15M55OGW3jSthMqutbIU5uXtGc_voU7As8ySoj4RHE4Z2W3A?key=QzgwR01sbVNaYXBqM2hJVUZob0ljTzY4NmQwR1B3>
 
-Nei prossimi giorni uscirà la versione interattiva e ve ne daremo notizia.
+Nei prossimi giorni uscirà la **versione interattiva** e ve ne daremo notizia.
 
 
 # Conclusioni
@@ -212,4 +212,4 @@ Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi
 Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore
 
 Io la mappa putroppo non l'ho fatta più, **ci voleva troppo tempo**. Inoltre quelle di Güenter sono le più belle e con più significato tra quelle viste in queste settimane; non sarei in grado di fare di meglio.<br>
-Per noi di onData è un piacere speciale che un utente come lui si confronti con noi per discutere di questioni come queste. A lui un grazie per avere stimolato questo approfondimento.
+Per noi di onData è un piacere speciale che un utente come lui si confronti con noi per discutere di questioni come queste: lo ringraziamo per avere stimolato questo approfondimento.
