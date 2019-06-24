@@ -127,7 +127,7 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
 
-Tutto questo è stato trasformato in questo script bash ....
+Tutto questo è stato trasformato in [questo script bash](./guenter.sh) ....
 
 
 # Il lavoro di Güenter
