@@ -8,7 +8,7 @@
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
-Qualche giorno fa mi ha scritto Gunter Richter - anzi lo scrivo bene **Günter** Richter, perché **gli accenti sono importanti** - per chiedermi se quest'anno onData avesse fatto qualcosa con i **dati elettorali** delle elezioni **europee** del 26 maggio **2019**.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e normalizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); questa volta purtroppo non abbiamo lavorato su questi dati.
+Qualche giorno fa mi ha scritto Gunter Richter - anzi lo scrivo bene **Günter** Richter, perché **gli accenti sono importanti** - per chiedermi se quest'anno onData avesse fatto qualcosa con i **dati elettorali** delle elezioni **europee** del 26 maggio **2019**.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e normalizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte di circa 15 pubblicazioni); questa volta purtroppo non abbiamo lavorato su questi dati.
 
 Nella vita precedente facevo più mappe e visto che stavolta non era necessario fare lo *scraping* ([i dati aperti sono pubblicati](https://twitter.com/Viminale/status/1135550843841916928)) e che Günter mi aveva raccontato di avere fatto delle belle mappe, ho deciso di farla anche io una "mappetta".<br>Uso questo termine perché volevo fare **una cosa carina** di base (il partito più votato per ogni comune), in **pochi minuti**.
 
