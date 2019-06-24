@@ -1,6 +1,7 @@
 - [Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno](#Creare-in-pochi-minuti-una-mappa-elettorale-a-partire-dai-dati-del-ministero-dellInterno)
   - [I dati](#I-dati)
-- [Mettere tutto questo insieme in una procedura](#Mettere-tutto-questo-insieme-in-una-procedura)
+- [Fuzzy sti c...y (con zeta dolce)](#Fuzzy-sti-cy-con-zeta-dolce)
+- [Creare una procedura](#Creare-una-procedura)
 - [csvmatch](#csvmatch)
 - [Il lavoro di Güenter](#Il-lavoro-di-G%C3%BCenter)
 
@@ -108,9 +109,33 @@ Ok, a questo punto avrei dovuto terminare ed essere pronto a fare il *JOIN* con 
 | PRESICCE | PRESICCE-ACQUARICA | È stato unito al Comune di Acquarica del Capo e rinominato |
 | BORGOCARBONARA | BORGOCARBONARA  | Nel file ISTAT c'è uno spazio dopo la `A` finale |
 
-# Mettere tutto questo insieme in una procedura
+# Fuzzy sti c...y (con zeta dolce)
 
-**Güenter** mi aveva anche detto che, prima di fare la sua mappa, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera fonte ispiratrici di questo post -  è quella di sotto.
+Una soluzione sempre possibile nella comparazione di stringhe è usare un confronto *fuzzy*, ovvero sfumato, che mappi la distanza tra parole molto vicine tra loro (perché `Cefalù` ad esempio è quasi `Cefalu'`).
+
+Ho provato a usarla, ma la lingua italiana è ricca e per i Comuni abbiamo ad esempio questi nomi che in un'analisi con algoritmo Levenshtein (uno di quelli usati in questo contesto), sarebbero indistinguibili (non nell'insieme, ma in gruppetti):
+
+| Regione | Nome Comune |
+| --- | --- |
+| CAMPANIA | CONZA DELLA CAMPANIA |
+| CAMPANIA | CONCA DELLA CAMPANIA |
+| LOMBARDIA | CORTENUOVA |
+| LOMBARDIA | CORTENOVA |
+| PIEMONTE | CARTIGNANO |
+| PIEMONTE | CARIGNANO |
+| PIEMONTE | CERCENASCO |
+| PIEMONTE | MERCENASCO |
+| PIEMONTE | TAVIGLIANO |
+| PIEMONTE | SAVIGLIANO |
+| PIEMONTE | SARDIGLIANO |
+| PIEMONTE | SANDIGLIANO |
+
+E comparando gli esiti di una modalità più "tradizionale", con una *fuzzy*, qui mi è sembrata più comoda la prima.
+
+
+# Creare una procedura
+
+**Güenter** mi aveva anche detto che, prima di fare le sue mappe, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera fonte ispiratrici di questo post -  è quella di sotto.
 
 ![](./imgs/voiComeFate.png)
 
@@ -128,7 +153,7 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
 
-Tutto questo è stato trasformato in [questo script bash](./guenter.sh) ....
+Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la partte
 
 # csvmatch
 
