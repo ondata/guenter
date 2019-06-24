@@ -208,7 +208,7 @@ Nei prossimi giorni uscirà la **versione interattiva** e ve ne daremo notizia.
 
 # Conclusioni
 
-Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi dati, sia potenzialmente ridotto per piccole lacune e/o omissioni. Non c'è alcuna voglia di alzare il ditino, ma soltanto mostrare come un utente, un professionista, un'azienda, uno studente, un cittadino, ecc. non possa lavorare da subito agli obiettivi che ha, ma debba prima **"fare funzionare" il dato**.<br>
+Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi dati, sia ridotto per piccole lacune e/o omissioni. Non c'è alcuna voglia di alzare il ditino, ma soltanto mostrare come un utente, un professionista, un'azienda, uno studente, un cittadino, ecc. non possa lavorare da subito agli obiettivi che ha, ma debba prima **"fare funzionare" il dato**.<br>
 Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore.
 
 Su questi dati io e [Davide Taibi](https://twitter.com/dataibi) abbiamo basato 3 ore di didattica, dal titolo: "Dati puliti, ben descritti e *linked ready*©: elementi propedeutici al riuso dei dati aperti". Abbiamo mostrato come per arrivare a dei dati pronti per essere *Linked Open Data*, ci fosse da fare un oneroso lavoro di preparazione del dato.<br> È stato uno dei momenti di didattica dell'evento di due giorni denominato [HACKFVG](https://www.anci.fvg.it/HackFVG/LA-DUE-GIORNI-DI-HACKFVG), organizzato da A.N.C.I. F.V.G..
