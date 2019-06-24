@@ -2,7 +2,7 @@
   - [I dati](#I-dati)
 - [Fuzzy sti c...y (con zeta dolce)](#Fuzzy-sti-cy-con-zeta-dolce)
 - [Creare una procedura](#Creare-una-procedura)
-- [csvmatch](#csvmatch)
+- [CSV Match](#CSV-Match)
 - [Il lavoro di Güenter](#Il-lavoro-di-G%C3%BCenter)
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
@@ -155,7 +155,7 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
 
 Tutto questo è stato trasformato in [questo script bash](./guenter.sh) in cui la parte "importante", quella della comparazione tra le due anagrafiche di nomi Comuni, è stata fatta con il comodissimo [**CSV Match**](https://github.com/maxharlow/csvmatch).
 
-# csvmatch
+# CSV Match
 
 **CSV Match** è un'*utility* python per fare *matching* tra CSV, ovvero quello di cui si parla sopra.<br>Per approfondire consiglio [questa ottima presentazione](https://docs.google.com/presentation/d/1oRSrVuRhff9UDO4-zfKsk9VnhnSGeaS1FNguA-SUXR8/edit#slide=id.g52423af19d_0_53) di Max Harlow (il suo autore), preparata per la conferenza NICAR 2019 (le cui slide sono ogni hanno fonte di perle).
 
