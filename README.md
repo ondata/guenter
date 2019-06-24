@@ -1,16 +1,14 @@
-- [Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno](#creare-in-pochi-minuti-una-mappa-elettorale-a-partire-dai-dati-del-ministero-dellinterno)
-  - [I dati](#i-dati)
-  - [Problemi](#problemi)
-  - [Note](#note)
-- [Lo script](#lo-script)
+- [Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno](#Creare-in-pochi-minuti-una-mappa-elettorale-a-partire-dai-dati-del-ministero-dellInterno)
+  - [I dati](#I-dati)
+- [Mettere tutto questo insieme in una procedura](#Mettere-tutto-questo-insieme-in-una-procedura)
 
 # Creare in pochi minuti una mappa elettorale a partire dai dati del ministero dell'Interno
 
-Qualche giorno fa mi ha scritto Guenter Richter - anzi lo scrivo bene **Güenter** Richter, perché gli accenti contano - per chiedermi se quest'anno onData avesse fatto qualcosa con i dati elettorali delle elezioni europee del 26 maggio 2019.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e noralizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); ma questa volta purtroppo non abbiamo lavorato su questi dati.
+Qualche giorno fa mi ha scritto Guenter Richter - anzi lo scrivo bene **Güenter** Richter, perché **gli accenti sono importanti** - per chiedermi se quest'anno onData avesse fatto qualcosa con i **dati elettorali** delle elezioni **europee** del 26 maggio **2019**.<br>Lo chiede perché diverse volte abbiamo fatto dei lavori di *scraping*, pulizia e normalizzazione sui dati elettorali ([quello sulle politiche del 2018](https://github.com/ondata/elezionipolitiche2018#sitografia) è stato fonte ci circa 15 pubblicazioni); questa volta purtroppo non abbiamo lavorato su questi dati.
 
-Però nella vita precedente facevo più mappe e visto che non era necessario fare lo *scraping* ([i dati aperti sono pubblicati](https://twitter.com/Viminale/status/1135550843841916928)) e che Güenter mi aveva raccontato di avere fatto queste belle mappe di sotto, ho deciso di farla anche io una "mappetta". Uso questo termine perché volevo fare una cosa carina di base (il partito più votato per ogni comune), in pochi minuti.
+Nella vita precedente facevo più mappe e visto che stavolta non era necessario fare lo *scraping* ([i dati aperti sono pubblicati](https://twitter.com/Viminale/status/1135550843841916928)) e che Güenter mi aveva raccontato di avere fatto delle belle mappe, ho deciso di farla anche io una "mappetta".<br>Uso questo termine perché volevo fare **una cosa carina** di base (il partito più votato per ogni comune), in **pochi minuti**.
 
-E confermo che **per fare la mappa, ci vuole poco tempo**. A seguire le modalità scelte.
+E confermo che **per fare la mappa, ci vuole poco tempo**. A seguire le modalità per farlo.
 
 ## I dati
 
@@ -23,15 +21,15 @@ Il primo passo è stato quello di scaricare il file ["Europee 2019. Scrutini Are
 
 ---
 
-Il separatore si legge guardando le prime righe del file (`I : ITALIA NORD-OCCIDENTALE;LIGURIA;GENOVA;ARENZANO;PARTITO DEMOCRATICO;1904`) ed qui è il carattere `;`. Per l'*encoding* ho usato uno dei tool con cui si ricava via *inferencing* ([chardet](https://github.com/chardet/chardet)); ho avuto una brutta sorpresa (la prima volta che mi succede), perché lo strumento non è stato in grado di estrarla. E anche con altri strumenti non riesco a risolvere, perché ho sempre caratteri illegibili, come sotto (avviene ad esempio per tutti i nomi in tedesco con dieresi, del Trentino-Alto Adige).
+Il separatore si legge guardando le prime righe del file (`I : ITALIA NORD-OCCIDENTALE;LIGURIA;GENOVA;ARENZANO;PARTITO DEMOCRATICO;1904`) e qui è il carattere `;`. <br>Per l'*encoding* ho usato uno dei *tool* con cui si ricava via *inferencing* ([chardet](https://github.com/chardet/chardet)); ho avuto una brutta sorpresa (la prima volta che mi succede), perché lo strumento non è stato in grado di estrarlo. E anche con altri strumenti non riesco a risolvere, perché ho sempre caratteri illegibili, come sotto (avviene ad esempio per tutti i nomi in tedesco del Trentino-Alto Adige, che contengono una dieresi).
 
     ITALIA NORD-ORIENTALE;TRENTINO-ALTO ADIGE;BOLZANO;LUSON/LۓEN;SVP;506
 
-Allora ho fatto una cosa molto grezza e "manuale": ho aperto il CSV con LibreOffice Calc, e provato uno ad uno il set di caratteri, finché in anteprima mi è comparsa la `Ü` di LÜSEN (e anche di Güenter). Perché gli accenti sono importanti.
+Allora ho fatto una cosa molto grezza e "a mano": ho aperto il CSV con LibreOffice Calc, e provato uno ad uno i set di caratteri, finché in anteprima mi è comparsa la `Ü` di LÜSEN (e anche di Güenter). Perché **gli accenti sono importanti**.
 
 ![](https://i.imgur.com/S8YMhfv.png)
 
-L'*encoding* è il cosidetto [Code page 850](https://www.wikiwand.com/en/Code_page_850). <br>Questa è per me un'altra cosa mai vista.
+L'*encoding* è il cosidetto [Code page 850](https://www.wikiwand.com/en/Code_page_850). <br>Questa è per me un'altra cosa mai vista, mai incontrato prima questo set di caratteri.
 
 ---
 
@@ -39,7 +37,7 @@ L'*encoding* è il cosidetto [Code page 850](https://www.wikiwand.com/en/Code_pa
 
 ---
 
-Ok, a questo avrei dovuto avere tutto: mi sarebbe bastato scaricare il file geografico con i limiti comunali e fare il *JOIN* con i dati elettorali a partire dal codice ISTAT dei vari comuni. Ma purtroppo (vedi tabella di esempio di sotto, quest'informazione non c'è).
+A questo punto avrei dovuto avere tutto: mi sarebbe bastato scaricare il file geografico con i limiti comunali e fare il *JOIN* con i dati elettorali a partire dal **codice ISTAT** dei vari **comuni**.<br>Ma purtroppo (vedi tabella di esempio di sotto) quest'informazione non è presente.
 
 ---
 
@@ -68,7 +66,7 @@ Avere il codice ISTAT sarebbe stata la cosa più comoda, ma mi sono detto "Andre
 Ripeto allora quanto fatto sopra sul tema: per fortuna qui l'analisi automatica mi mappa correttamente l'*encoding*, che stavolta è `Windows-1252`.
 
 Allora potevo iniziare con i *JOIN* per nome del Comune e Regione (infatti in una regione non possono esserci comuni con lo stesso nome). Lo faccio e ottengo **ZERO coincidenze**.
-<br>Colpa mia, fatto di fretta: **nel file del Ministero degli Interni i nomi dei luoghi sono in "TUTTO MAIUSCOLO" e sul file ISTAT no**. I PC sono scemi e se non istruiti vedono "MILANO" e "Milano" come due città diverse.
+<br>Colpa mia, fatto di fretta: **nel file del Ministero degli Interni i nomi dei luoghi sono in "TUTTO MAIUSCOLO" e sul file ISTAT no**. I PC sono scemi e se non istruiti vedono "MILANO" e "Milano" come due città diverse (sono stato un po' scemo anche io).
 
 ---
 
@@ -76,34 +74,43 @@ Allora potevo iniziare con i *JOIN* per nome del Comune e Regione (infatti in un
 
 ---
 
-Avere il *case* dei caratteri tutto in maisculo (o in minisculo), alle volte è comodo, perché stringhe come queste hanno delle problematicità che possono provocare errori: ad esempio il nome del Comune di "Terranova dei Passerini" non ha tutte le prime lettere in maiuscolo.<br>
-Allora ho riportato tutto in maiscuolo e rifatto il *JOIN*: per ben **501 comuni però senza esito**.<br>
-Allora ho guardato un po' l'*output* e ho visto che ad esempio tutti comuni del Trentino-Alto Adige e della Valle d'Aosta erano assenti e questo avveniva perché nel file ISTAT i nome delle Regioni sono espresse in tutte le lingue ufficiali di quella regione (quindi Valle d'Aosta/Vallée d'Aoste e Trentino-Alto Adige/Südtirol).
+Avere il *case* dei caratteri tutto in maisculo (o in minisculo), alle volte comunque è comodo, perché stringhe come queste hanno delle problematicità che possono provocare altri errori: ad esempio il nome del Comune di "Terranova dei Passerini" non ha tutte le prime lettere in maiuscolo (perché il `dei` va con l'iniziale in minuscolo).<br>
+Allora ho riportato tutto in maiscuolo e rifatto il *JOIN*: per **501 comuni però senza esito**.<br>
+Allora ho guardato un po' l'*output* e ho visto che ad esempio tutti comuni del Trentino-Alto Adige e della Valle d'Aosta erano assenti e questo avveniva perché nel file ISTAT i nomi delle Regioni sono espressi in tutte le lingue ufficiali di ogni regione (quindi Valle d'Aosta/Vallée d'Aoste e Trentino-Alto Adige/Südtirol).
 
 ---
 
-🛎️ I nomi delle regioni in questo file ISTAT sono espresse nelle lingue ufficiali relative.
+🛎️ I nomi delle regioni in questo file ISTAT sono espressi nelle lingue ufficiali relative.
 
 ---
 
-Allora ho estratto i soli nomi in italiano delle regioni e rifatto il tutto: per diversi comuni non riescivo a fare la correlazione per nome.
+Allora ho estratto i soli nomi in italiano delle regioni e rifatto il tutto. E di nuovo per diversi comuni - circa 140 - non riuscivo a fare la correlazione per nome.
 
-## Problemi
+Mi rimanevono fuori ad esempio: AGLIE', ALA' DEI SARDI, ALI', ALI' TERME, ALME', ANTEY-SAINT-ANDRE', ARQUA' PETRARCA, ARQUA' POLESINE, ARSIE', BARZANO', BASCAPE', BASELGA DI PINE', BASICO', BASTIA MONDOVI', BELVI', BIANZE', BIDONI', BUDDUSO', CAGNO', CANICATTI', CANTU', ..."
 
-| Nome Ministero Interni | Nome ISTAT | Note
+Il problema sono i **caratteri accentati**.
+
+---
+
+🛎️ Sui dati elettorali del Ministero degli Interni è presente la denominazione trasliletterata dei Comuni (`È` diventa `E'`), nei dati ISTAT no.
+
+---
+
+Ok, a questo punto avrei dovuto terminare ed essere pronto a fare il *JOIN* con soddisfazione, ma non è così, ancora non riesco a ricavare il codice ISTAT di 5 Comuni. Nel dettaglio:
+
+| Nome Ministero Interni | Nome ISTAT | Perché non si riesce a fare il JOIN
 | --- | --- | --- |
 | PUEGNAGO DEL GARDA | PUEGNAGO SUL GARDA | Sono chiamati diversamente |
 | SAN DORLIGO DELLA VALLE-DOLINA | SAN DORLIGO DELLA VALLE | Sono chiamati diversamente |
 | ACQUARICA DEL CAPO | PRESICCE-ACQUARICA | È stato unito al Comune di Presicce e rinominato |
 | PRESICCE | PRESICCE-ACQUARICA | È stato unito al Comune di Acquarica del Capo e rinominato |
+| BORGOCARBONARA | BORGOCARBONARA  | Nel file ISTAT c'è uno spazio dopo la `A` finale |
 
-## Note
+# Mettere tutto questo insieme in una procedura
 
-In ISTAT `Borgocarbonara  ` con due spazi
+**Güenter** mi aveva anche detto che, prima di fare la sua mappa, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "**voi come fate**?" In realtà la sua domanda - che è la vera fonte ispiratrici di questo post -  è quella di sotto.
 
-# Lo script
-
-**Güenter** mi aveva anche detto che, prima di fare la sua mappa, aveva dedicato molto tempo nel mettere in relazione le due anagrafiche. E aveva aggiunto: "voi come fate?"
+![](./imgs/voiComeFate.png)
 
 Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni usati dal Ministero degli Interni**, un flusso di lavoro potrebbe essere questo:
 
@@ -118,3 +125,5 @@ Detto che l'obiettivo di base è **associare il codice ISTAT ai nomi dei Comuni 
   - senza tenere conto dei **caratteri non alfanumerici** (come `-`, `~`, `.`, ecc.);
   - senza tenere conto dei **caratteri accentati** e riportali secondo l'alfabeto latino;
 - **correggere** in modo specifico i **nomi dei Comuni** di cui non è possibile fare il *JOIN*, per errori presenti nei file di origine.
+
+Tutto questo è stato trasformato in questo script bash
