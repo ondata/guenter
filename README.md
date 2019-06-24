@@ -209,7 +209,9 @@ Nei prossimi giorni uscirà la **versione interattiva** e ve ne daremo notizia.
 # Conclusioni
 
 Questo articolo ha soltanto un obiettivo: mostrare come il valore alto di questi dati, sia potenzialmente ridotto per piccole lacune e/o omissioni. Non c'è alcuna voglia di alzare il ditino, ma soltanto mostrare come un utente, un professionista, un'azienda, uno studente, un cittadino, ecc. non possa lavorare da subito agli obiettivi che ha, ma debba prima **"fare funzionare" il dato**.<br>
-Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore
+Con due **scelte semplici** e a **costo quasi nullo** - documentare l'*encoding* e associare ai nomi dei Comuni un codice "standard" - il tempo dal *download* al riuso diventa quasi immediato, perché i dati sono di grande interesse e valore.
+
+Su questi dati, ho basato 3 ore di didattica svolte insieme a [Davide Taibi](https://twitter.com/dataibi), dal titolo: "Dati puliti, ben descritti e *linked ready*: elementi propedeutici al riuso dei dati aperti". Abbiamo mostrato come per arrivare a dei dati pronti per essere *Linked Open Data*, ci fosse da fare un certo lavoro di preparazione del dato.<br> Era uno dei momenti di didattica dell'evento di due giorni denominato [HACKFVG](https://www.anci.fvg.it/HackFVG/LA-DUE-GIORNI-DI-HACKFVG), organizzato da A.N.C.I. F.V.G..
 
 Io la mappa putroppo non l'ho fatta più, **ci voleva troppo tempo**. Inoltre quelle di Günter sono le più belle e con più significato tra quelle viste in queste settimane; non sarei in grado di fare di meglio.<br>
 Per noi di onData è un piacere speciale che un utente come lui si confronti con noi per discutere di questioni come queste: lo ringraziamo per avere stimolato questo approfondimento.
